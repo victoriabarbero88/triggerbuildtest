@@ -1,0 +1,13 @@
+steps:
+- id: "clone repo"
+  name: alpine/git
+  entrypoint: git
+  args:
+    - clone
+    - https://gist.github.com/ea5563c9d62ed34b96ebb13fda14f3c9.git
+    - /workspace
+- id: "run"
+  name: python:3-alpine
+  entrypoint: python3
+  args:
+    - /workspace/hello.py
